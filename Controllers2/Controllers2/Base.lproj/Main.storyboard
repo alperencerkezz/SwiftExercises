@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Upload-->
+        <!-- -->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Controllers2" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Upload" image="square.and.arrow.up" catalog="system" badgeValue="1" id="IQ0-4E-830">
+                    <tabBarItem key="tabBarItem" title=" " image="square.and.arrow.up" catalog="system" badgeValue="1" id="IQ0-4E-830">
                         <color key="badgeColor" systemColor="tintColor"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="20" vertical="0.0"/>
                     </tabBarItem>

@@ -40,7 +40,7 @@
         <!--VC2-->
         <scene sceneID="nk4-pe-huR">
             <objects>
-                <viewController id="zVQ-Ad-KVv" customClass="VC2" customModule="Data_Transfer_with_Segue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC2" id="zVQ-Ad-KVv" customClass="VC2" customModule="Data_Transfer_with_Segue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s22-Mw-8fz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

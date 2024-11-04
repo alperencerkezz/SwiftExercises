@@ -16,7 +16,15 @@ class ViewController: UIViewController {
 
 
     @IBAction func btnSwitch_TUI(_ sender: Any) {
-        performSegue(withIdentifier: "sgSwitch", sender: "Sent value")
+       // performSegue(withIdentifier: "sgSwitch", sender: "Sent value")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc2 = storyboard.instantiateViewController(withIdentifier: "VC2") as! VC2
+        
+        vc2.incoming = "Sent Value"
+        
+        present(vc2, animated: true, completion: nil)
+        
         
     }
     

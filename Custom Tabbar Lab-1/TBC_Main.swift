@@ -13,6 +13,14 @@ class TBC_Main: UITabBarController {
     @IBOutlet weak var v2: UIView!
     @IBOutlet weak var ivFavorites: UIImageView!
     @IBOutlet weak var ivAccount: UIImageView!
+    let unselectedColor = UIColor(named: "unselected")
+    let selectedColor = UIColor(named: "selected")
+    let selectedFavs = UIImage(named: "selectedFavs")
+    let unselectedFavs = UIImage(named: "unselectedFavs")
+    
+    let selectedAcc = UIImage(named: "selectedAcc")
+    let unselectedAcc = UIImage(named: "unselectedAcc")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +39,34 @@ class TBC_Main: UITabBarController {
         ])
         
         tabBar.isHidden = true
+        Switch(tabIndex: 0)
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func SwitchTabs(_ sender: Any) {
+        Switch(tabIndex: (sender as! UIButton).tag)
+    }
+    
+    func Switch(tabIndex: Int) {
+        v1.backgroundColor = unselectedColor
+        v2.backgroundColor = unselectedColor
         
+        ivFavorites.image = unselectedFavs
+        ivAccount.image = unselectedAcc
         
+        switch tabIndex {
+        case 0:
+            v1.backgroundColor = selectedColor
+            ivFavorites.image = selectedFavs
+        case 1:
+            v2.backgroundColor = selectedColor
+            ivAccount.image = selectedAcc
+        default:
+            v1.backgroundColor = selectedColor
+        }
+        
+        selectedIndex = tabIndex
     }
     
     /*

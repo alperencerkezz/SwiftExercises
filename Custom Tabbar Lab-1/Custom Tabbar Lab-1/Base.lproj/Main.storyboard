@@ -55,16 +55,21 @@
             </objects>
             <point key="canvasLocation" x="818" y="-347"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main-->
         <scene sceneID="GtN-ib-DWp">
             <objects>
-                <tabBarController id="peW-pS-pQ4" sceneMemberID="viewController">
+                <tabBarController id="peW-pS-pQ4" customClass="TBC_Main" customModule="Custom_Tabbar_Lab_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dLz-Tq-eUf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="ivAccount" destination="IJe-NQ-rHS" id="onm-sV-W9H"/>
+                        <outlet property="ivFavorites" destination="xZa-uc-p5u" id="mC5-JD-zIA"/>
+                        <outlet property="tbVSpecial" destination="iTo-PO-VWL" id="HaC-rX-d6c"/>
+                        <outlet property="v1" destination="n0f-iK-W4g" id="mv5-l6-ocU"/>
+                        <outlet property="v2" destination="eHg-o1-Egl" id="x2o-sB-JFP"/>
                         <segue destination="zby-Gb-tBz" kind="relationship" relationship="viewControllers" id="ABT-Z2-roy"/>
                         <segue destination="VvO-24-etL" kind="relationship" relationship="viewControllers" id="O2N-lq-pfD"/>
                     </connections>
@@ -106,6 +111,22 @@
                                 <constraint firstItem="IJe-NQ-rHS" firstAttribute="centerX" secondItem="eHg-o1-Egl" secondAttribute="centerX" id="iBj-yX-Dxc"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2V-mV-T9v" userLabel="btn1">
+                            <rect key="frame" x="196" y="27" width="24" height="14"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title=""/>
+                            <connections>
+                                <action selector="SwitchTabs:" destination="peW-pS-pQ4" eventType="touchUpInside" id="7jc-tu-hX4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXD-YH-ktD" userLabel="btn2">
+                            <rect key="frame" x="321" y="27" width="24" height="14"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title=""/>
+                            <connections>
+                                <action selector="SwitchTabs:" destination="peW-pS-pQ4" eventType="touchUpInside" id="aXv-0Y-4oa"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="QcN-sW-1hQ"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,12 +134,20 @@
                         <constraint firstItem="eHg-o1-Egl" firstAttribute="leading" secondItem="n0f-iK-W4g" secondAttribute="trailing" id="277-iP-5dA"/>
                         <constraint firstItem="QcN-sW-1hQ" firstAttribute="trailing" secondItem="eHg-o1-Egl" secondAttribute="trailing" id="6tN-Vk-uEG"/>
                         <constraint firstItem="eHg-o1-Egl" firstAttribute="width" secondItem="n0f-iK-W4g" secondAttribute="width" id="A9M-gD-amm"/>
+                        <constraint firstItem="QcN-sW-1hQ" firstAttribute="top" secondItem="p2V-mV-T9v" secondAttribute="top" id="NFJ-f5-bqt"/>
                         <constraint firstItem="n0f-iK-W4g" firstAttribute="leading" secondItem="QcN-sW-1hQ" secondAttribute="leading" id="NrB-ta-OGb"/>
+                        <constraint firstItem="DXD-YH-ktD" firstAttribute="top" secondItem="p2V-mV-T9v" secondAttribute="top" id="UMJ-2k-sTz"/>
                         <constraint firstItem="n0f-iK-W4g" firstAttribute="top" secondItem="QcN-sW-1hQ" secondAttribute="top" constant="30" id="XOb-uJ-5AG"/>
                         <constraint firstItem="eHg-o1-Egl" firstAttribute="top" secondItem="n0f-iK-W4g" secondAttribute="top" id="d23-zR-4VG"/>
+                        <constraint firstItem="p2V-mV-T9v" firstAttribute="trailing" secondItem="n0f-iK-W4g" secondAttribute="trailing" id="fqr-up-iJh"/>
                         <constraint firstItem="n0f-iK-W4g" firstAttribute="top" secondItem="QcN-sW-1hQ" secondAttribute="top" constant="30" id="hjB-mN-2nQ"/>
+                        <constraint firstItem="DXD-YH-ktD" firstAttribute="leading" secondItem="eHg-o1-Egl" secondAttribute="leading" id="nrW-Qt-7r5"/>
+                        <constraint firstItem="p2V-mV-T9v" firstAttribute="leading" secondItem="n0f-iK-W4g" secondAttribute="leading" id="q4R-FT-Y0G"/>
                         <constraint firstAttribute="bottom" secondItem="n0f-iK-W4g" secondAttribute="bottom" id="vk6-Ld-Cdo"/>
+                        <constraint firstItem="DXD-YH-ktD" firstAttribute="trailing" secondItem="eHg-o1-Egl" secondAttribute="trailing" id="xZB-M4-tM5"/>
                         <constraint firstItem="eHg-o1-Egl" firstAttribute="bottom" secondItem="iTo-PO-VWL" secondAttribute="bottom" id="xmT-1f-gbK"/>
+                        <constraint firstItem="p2V-mV-T9v" firstAttribute="bottom" secondItem="n0f-iK-W4g" secondAttribute="bottom" id="ze7-fv-6ZB"/>
+                        <constraint firstItem="DXD-YH-ktD" firstAttribute="bottom" secondItem="eHg-o1-Egl" secondAttribute="bottom" id="zrB-Ef-Cst"/>
                     </constraints>
                 </view>
             </objects>

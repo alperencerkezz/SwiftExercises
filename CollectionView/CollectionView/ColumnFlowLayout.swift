@@ -10,7 +10,7 @@ import UIKit
 class ColumnFlowLayout: UICollectionViewFlowLayout {
 
     let columnCount: Int
-    var heightRatio: CGFloat = (2.0 / 3.0)
+    var heightRatio: CGFloat = (3.0 / 2.0)
     
     init(columnCount: Int, minColumnSpacing: CGFloat = 0, minRowSpacing: CGFloat = 0) {
         self.columnCount = columnCount

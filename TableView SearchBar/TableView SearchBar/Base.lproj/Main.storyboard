@@ -33,12 +33,22 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="46j-qw-lqz"/>
                                 </connections>
                             </searchBar>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fai-qE-7Gr">
+                                <rect key="frame" x="16" y="117" width="361" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tfSearch_EC:" destination="BYZ-38-t0r" eventType="editingChanged" id="CCL-uN-nxY"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="sbList" destination="8Vw-OK-IQq" id="rh5-bb-nZn"/>
+                        <outlet property="tfSearch" destination="fai-qE-7Gr" id="NTO-PH-ibj"/>
                         <outlet property="tvList" destination="eq2-er-J5f" id="wDY-Jy-LrM"/>
                     </connections>
                 </viewController>

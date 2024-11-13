@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     
+    @IBOutlet weak var tfSearch: UITextField!
     @IBOutlet weak var sbList: UISearchBar!
     @IBOutlet weak var tvList: UITableView!
     
@@ -42,6 +43,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tvList.reloadData()
     }
     
+    @IBAction func tfSearch_EC(_ sender: Any) {
+        
+        filteredList.removeAll()
+        
+        if tfSearch.text!.isEmpty {
+            filteredList.append(contentsOf: fullList)
+        } else {
+            for fruit in fullList {
+                if fruit.range(of: tfSearch.text!) != nil {
+                    filteredList.append(fruit)
+                }
+            }
+        }
+        
+        tvList.reloadData()
+        
+    }
     
 
 

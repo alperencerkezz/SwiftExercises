@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     
 
@@ -54,15 +54,49 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if((scrollView.contentOffset.y + scrollView.frame.size.height)) > (scrollView.contentSize.height * 0.9) {
             
-            addElement()
+            AddElement()
         }
     }
     
-    func addElement() {
+    func AddElement() {
         
+        if (((page + 1)*20) < filteredList.count) {
+            
+            for i in ((page + 1)*20)..<((page + 2)*20) {
+                
+                if i < filteredList.count {
+                    
+                    loadedList.append(filteredList[i])
+                }
+            }
+            
+            page += 1
+            tvList.reloadData()
+            
+        }
     }
     
-
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        page = 0
+        
+        filteredList = searchText.isEmpty ? wholeList: wholeList.filter({
+            
+            (article: Article)-> Bool in
+            return article.Title.range(of: searchText, options: .caseInsensitive) != nil || article.ShortDescription.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        
+        loadedList.removeAll()
+        
+        for i in 0..<filteredList.count {
+            
+            if i<20 {
+                
+                loadedList.append(filteredList[i])
+            }
+        }
+        
+        tvList.reloadData()
+    }
 
 }
 

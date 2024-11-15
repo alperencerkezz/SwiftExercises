@@ -14,6 +14,8 @@
 		8851F3F82CE7A44400F41119 /* Core_Data_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8851F3F62CE7A44400F41119 /* Core_Data_Project.xcdatamodeld */; };
 		8851F3FA2CE7A44500F41119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8851F3F92CE7A44500F41119 /* Assets.xcassets */; };
 		8851F3FD2CE7A44500F41119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8851F3FB2CE7A44500F41119 /* LaunchScreen.storyboard */; };
+		8851F4092CE7CA4500F41119 /* ToDo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851F4072CE7CA4500F41119 /* ToDo+CoreDataClass.swift */; };
+		8851F40A2CE7CA4500F41119 /* ToDo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851F4082CE7CA4500F41119 /* ToDo+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		8851F3F92CE7A44500F41119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8851F3FC2CE7A44500F41119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8851F3FE2CE7A44500F41119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8851F4072CE7CA4500F41119 /* ToDo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8851F4082CE7CA4500F41119 /* ToDo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 		8851F3E12CE7A44400F41119 = {
 			isa = PBXGroup;
 			children = (
+				8851F4072CE7CA4500F41119 /* ToDo+CoreDataClass.swift */,
+				8851F4082CE7CA4500F41119 /* ToDo+CoreDataProperties.swift */,
 				8851F3EC2CE7A44400F41119 /* Core Data Project */,
 				8851F3EB2CE7A44400F41119 /* Products */,
 			);
@@ -144,6 +150,8 @@
 				8851F3F22CE7A44400F41119 /* ViewController.swift in Sources */,
 				8851F3EE2CE7A44400F41119 /* AppDelegate.swift in Sources */,
 				8851F3F82CE7A44400F41119 /* Core_Data_Project.xcdatamodeld in Sources */,
+				8851F40A2CE7CA4500F41119 /* ToDo+CoreDataProperties.swift in Sources */,
+				8851F4092CE7CA4500F41119 /* ToDo+CoreDataClass.swift in Sources */,
 				8851F3F02CE7A44400F41119 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

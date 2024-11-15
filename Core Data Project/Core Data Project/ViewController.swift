@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AddToDo(title: "Title 1", contents: "Content 1")
+        AddToDo(title: "Title 2", contents: "Content 1")
+        FetchToDo()
         
     }
     
@@ -31,10 +32,25 @@ class ViewController: UIViewController {
         
     }
     
-    
     func FetchContext()-> NSManagedObjectContext {
         
         return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    }
+    
+    func FetchToDo() {
+        
+        let fetchRequest: NSFetchRequest<ToDo> = ToDo.fetchRequest
+        
+        do {
+            let toDos = try FetchContext().fetch(fetchRequest)
+            
+            for todo in toDos {
+                print("Title:  \(todo.title!) Content: \(todo.content!)")
+            }
+        }
+        catch {
+            print("Error")
+        }
     }
 
 

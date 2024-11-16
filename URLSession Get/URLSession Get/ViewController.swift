@@ -13,10 +13,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let request = URLRequest(url: URL(string: "")!)
+        var request = URLRequest(url: URL(string: "")!)
         
         
- 
+        var header = [String: String]()
+        header["Content-Type"] = "application/json"
+        
+        header["Authorization"] = "Token value"
+        
+        request.allHTTPHeaderFields = header
+        
+        request.addValue("value", forHTTPHeaderField: "Key")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             

@@ -25,6 +25,24 @@ class ViewController: UIViewController {
         
         request.addValue("value", forHTTPHeaderField: "Key")
         
+        request.httpMethod = "POST"
+        
+        let parameters : [String: Any] = [
+        
+            "E-mail" : "value",
+            "Password" : "value"
+        
+        ]
+        
+        if header["Content-Type"] == "application/json" 
+        {
+            request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: [])
+        }
+        else if header["Content-Type"] == "application/x-www-form-urlencoded"
+        {
+            request.httpBody = ConvertUrlEncoded(parameters: parameters)
+        }
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             
             if error != nil
@@ -51,6 +69,21 @@ class ViewController: UIViewController {
         }.resume()
     }
 
+    func ConvertUrlEncoded(parameters: [String: Any]) -> Data
+    {
+        var strData = ""
+        
+        for p in parameters {
+            
+            if strData != "" {
+                strData += "&"
+            }
+            
+            strData += "\(p.key)=\(p.value)"
+        }
+        
+        return strData.data(using: .ascii)!
+    }
 
 }
 

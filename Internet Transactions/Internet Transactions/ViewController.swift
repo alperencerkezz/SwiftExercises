@@ -8,30 +8,29 @@
 import UIKit
 import Alamofire
 
-struct ResponseHeaders: Decodable {
-    let headers: [String: String]
-}
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
-        let headers: HTTPHeaders = [
-            "Token": "Token value",
-            "Content-Type": "application/json"
-        ]
-
-        print("Request Headers: \(headers)")
-
-        AF.request("https://httpbin.org/headers", headers: headers).responseDecodable(of: ResponseHeaders.self) { response in
-            switch response.result {
-            case .success(let data):
-                print("Response Headers: \(data.headers)")
-            case .failure(let error):
-                print("Error: \(error)")
-            }
+        
+        let P = Person(Name: "Name 1", Surname: "Surname 1")
+        
+        let parameters = ["mail" : "value", "password" : "password"]
+        
+        AF.request("https://httpbin.org/post",
+                   method: .post,
+                   parameters: parameters,
+                   encoder: JSONParameterEncoder.default).response { response in
+            debugPrint(response)
         }
+        
     }
+}
+
+struct Person: Encodable
+{
+    let Name: String
+    let Surname: String
 }

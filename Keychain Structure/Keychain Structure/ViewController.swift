@@ -15,6 +15,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         Add()
         Read()
+        Update()
+        Read()
+        Delete()
+        Read()
     }
     
     func Add()
@@ -49,7 +53,33 @@ class ViewController: UIViewController {
             print(value)
         }
     }
+    
+    func Update()
+    {
+        let query = [
+            kSecValueData: "added value".data(using: .utf8)!,
+            kSecAttrAccount: "username",
+        ] as CFDictionary
+        
+        let data = [
+            kSecValueData: "updated value".data(using: .utf8)!
+        ] as CFDictionary
+        
+        let situation = SecItemUpdate(query, data)
+        
+        print(situation )
+    }
 
+    func Delete()
+    {
+        let query = [
+            kSecValueData: "added value".data(using: .utf8)!,
+            kSecAttrAccount: "username",
+        ] as CFDictionary
+        
+        let situation = SecItemDelete(query)
+        print(situation)
+    }
 
 }
 

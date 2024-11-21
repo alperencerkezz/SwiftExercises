@@ -10,10 +10,14 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var People = [Person]()
+    var viewModelPersonList = ViewModelPersonList()
 
     @IBOutlet weak var tvList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModelPersonList.fillPeople()
+        tvList.reloadData()
         
         fillPeople()
         
@@ -32,8 +36,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = UITableViewCell()
-        let person = People[indexPath.row]
-        row.textLabel?.text = "\(person.Name) \(person.Surname)"
+        let vmPerson = viewModelPersonList.fetchPerson(index: indexPath.row)
+        
+        
+        row.textLabel?.text = "\(vmPerson.Name) \(vmPerson.Surname)"
         return row
     }
 
